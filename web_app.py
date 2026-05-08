@@ -393,7 +393,7 @@ class Handler(BaseHTTPRequestHandler):
                 protocol_file = target_out_dir / f"{source_path.stem}.protocol.md"
                 protocol_file.write_text(protocol_text, encoding="utf-8")
                 protocol_pdf_file = target_out_dir / f"{source_path.stem}.protocol.pdf"
-                save_protocol_pdf(protocol_text, protocol_pdf_file)
+                save_protocol_pdf(protocol_text, protocol_pdf_file, meeting_title=source_path.stem)
                 protocol_note = f" Протокол сохранен в {protocol_file} и {protocol_pdf_file}."
                 protocol_download_url = "/download?file=" + urllib.parse.quote(str(protocol_pdf_file))
             except Exception as protocol_exc:  # pylint: disable=broad-except

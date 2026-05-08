@@ -1,0 +1,13 @@
+[project]
+name = "protokol-sovesch"
+version = "0.1.0"
+description = "Автоматическая подготовка протокола совещания из записи"
+readme = "Agents.md"
+requires-python = ">=3.10"
+dependencies = [
+  "faster-whisper",
+  "reportlab",
+]
+
+[tool.uv]
+package = false
