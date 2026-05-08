@@ -1,0 +1,1 @@
+{"max_tokens":100,"messages":[{"content":"How many r\u0027s are in the word strawberry?","role":"user"}],"model":"nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free","stream":false}
