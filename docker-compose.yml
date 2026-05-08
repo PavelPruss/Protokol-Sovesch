@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  protokol-sovesch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: protokol-sovesch
+    ports:
+      - "8090:8090"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_BASE_URL=${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free}
+      - WHISPER_MODEL_SIZE=${WHISPER_MODEL_SIZE:-base}
+      - WHISPER_LANGUAGE=${WHISPER_LANGUAGE:-auto}
+      - WHISPER_DEVICE=${WHISPER_DEVICE:-cpu}
+      - WHISPER_COMPUTE_TYPE=${WHISPER_COMPUTE_TYPE:-int8}
+      - HF_HUB_DISABLE_SYMLINKS_WARNING=1
+    volumes:
+      - ./outputs:/app/outputs
+      - ./uploads:/app/uploads
+    restart: unless-stopped

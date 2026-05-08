@@ -1,0 +1,70 @@
+127.0.0.1 - - [08/May/2026 13:18:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:19:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:19:14] "GET /favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:24:15] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:26:57] "GET /download?file=C%3A%5CUsers%5CPavel%5CDesktop%5CProjects%5CProtokol-Sovesch%5Coutputs%5Caudio1480984180.protocol.pdf HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:37:12] "GET /download?file=C%3A%5CUsers%5CPavel%5CDesktop%5CProjects%5CProtokol-Sovesch%5Coutputs%5Caudio1480984180.protocol.pdf HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:40:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:40:44] "GET /favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:42:51] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:42:51] "POST / HTTP/1.1" 500 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 50662)
+Traceback (most recent call last):
+  File "C:\Users\Pavel\Desktop\Projects\Protokol-Sovesch\web_app.py", line 406, in do_POST
+    self._send_html(
+  File "C:\Users\Pavel\Desktop\Projects\Protokol-Sovesch\web_app.py", line 331, in _send_html
+    self.wfile.write(data)
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 424, in handle_one_request
+    method()
+  File "C:\Users\Pavel\Desktop\Projects\Protokol-Sovesch\web_app.py", line 416, in do_POST
+    self._send_html(
+  File "C:\Users\Pavel\Desktop\Projects\Protokol-Sovesch\web_app.py", line 330, in _send_html
+    self.end_headers()
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 538, in end_headers
+    self.flush_headers()
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 542, in flush_headers
+    self.wfile.write(b"".join(self._headers_buffer))
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+ConnectionAbortedError: [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение
+----------------------------------------
+127.0.0.1 - - [08/May/2026 13:59:41] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 13:59:41] "GET /favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:00:04] "GET /download?file=C%3A%5CUsers%5CPavel%5CDesktop%5CProjects%5CProtokol-Sovesch%5Coutputs%5Caudio1903787135.protocol.pdf HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:03:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 14:05:07] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49302)
+Traceback (most recent call last):
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Pavel\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+----------------------------------------
