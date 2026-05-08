@@ -1,0 +1,8 @@
+.env
+.env.*
+
+# Local API/debug artifacts
+chat-test.json
+stt-request.json
+stt-request-mini.json
+sample-test.wav
